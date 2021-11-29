@@ -30,8 +30,9 @@
 /* Begin PBXFileReference section */
 		13142CC572E321368C614538 /* Pods-ICD10Kit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICD10Kit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-ICD10Kit_Tests/Pods-ICD10Kit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3566AC2D631302326C4761DA /* Pods-ICD10Kit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICD10Kit_Example.debug.xcconfig"; path = "Target Support Files/Pods-ICD10Kit_Example/Pods-ICD10Kit_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		39C9336FABA93F6AB0F4AC2A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		39C9336FABA93F6AB0F4AC2A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		423E903D321B5ED3E752F3CB /* Pods_ICD10Kit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICD10Kit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		458CA092275560990065F324 /* ICD10Kit_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ICD10Kit_Example.entitlements; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* ICD10Kit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICD10Kit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,8 +43,8 @@
 		607FACE51AFB9204008FA782 /* ICD10Kit_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ICD10Kit_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		8A3ABE3B4E97CE144210834E /* ICD10Kit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = ICD10Kit.podspec; path = ../ICD10Kit.podspec; sourceTree = "<group>"; };
-		8CB11041F7FDCE19F03FC414 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		8A3ABE3B4E97CE144210834E /* ICD10Kit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ICD10Kit.podspec; path = ../ICD10Kit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8CB11041F7FDCE19F03FC414 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DC4B7F355B6176EEA566CCAF /* Pods-ICD10Kit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICD10Kit_Example.release.xcconfig"; path = "Target Support Files/Pods-ICD10Kit_Example/Pods-ICD10Kit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E0A6F0677B2DF5ADF14F1622 /* Pods-ICD10Kit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICD10Kit_Tests.release.xcconfig"; path = "Target Support Files/Pods-ICD10Kit_Tests/Pods-ICD10Kit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F9DF1E9477E0B6089F1B71E6 /* Pods_ICD10Kit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICD10Kit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,7 +78,6 @@
 				13142CC572E321368C614538 /* Pods-ICD10Kit_Tests.debug.xcconfig */,
 				E0A6F0677B2DF5ADF14F1622 /* Pods-ICD10Kit_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -93,6 +93,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				458CA092275560990065F324 /* ICD10Kit_Example.entitlements */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for ICD10Kit */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -213,10 +214,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 4575KXUFK2;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 4575KXUFK2;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -227,6 +230,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -270,10 +274,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ICD10Kit_Example/Pods-ICD10Kit_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ICD10Kit/ICD10Kit.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ICD10Kit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -419,7 +427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -465,7 +473,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -478,13 +486,18 @@
 			baseConfigurationReference = 3566AC2D631302326C4761DA /* Pods-ICD10Kit_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ICD10Kit_Example.entitlements;
+				DEVELOPMENT_TEAM = 4575KXUFK2;
 				INFOPLIST_FILE = ICD10Kit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "2,6";
 			};
 			name = Debug;
 		};
@@ -493,13 +506,18 @@
 			baseConfigurationReference = DC4B7F355B6176EEA566CCAF /* Pods-ICD10Kit_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ICD10Kit_Example.entitlements;
+				DEVELOPMENT_TEAM = 4575KXUFK2;
 				INFOPLIST_FILE = ICD10Kit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "2,6";
 			};
 			name = Release;
 		};
@@ -507,6 +525,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 13142CC572E321368C614538 /* Pods-ICD10Kit_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 4575KXUFK2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -529,6 +548,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E0A6F0677B2DF5ADF14F1622 /* Pods-ICD10Kit_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 4575KXUFK2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",

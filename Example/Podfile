@@ -1,8 +1,9 @@
 use_frameworks!
 
-platform :ios, '9.0'
+platform :ios, '12.4'
 
 target 'ICD10Kit_Example' do
+  pod 'RealmSwift', '10.11.0'
   pod 'ICD10Kit', :path => '../'
 
   target 'ICD10Kit_Tests' do

@@ -1,0 +1,30 @@
+PODS:
+  - ICD10Kit (0.1.0):
+    - RealmSwift (>= 10.11.0)
+  - Realm (10.11.0):
+    - Realm/Headers (= 10.11.0)
+  - Realm/Headers (10.11.0)
+  - RealmSwift (10.11.0):
+    - Realm (= 10.11.0)
+
+DEPENDENCIES:
+  - ICD10Kit (from `../`)
+  - RealmSwift (= 10.11.0)
+
+SPEC REPOS:
+  trunk:
+    - Realm
+    - RealmSwift
+
+EXTERNAL SOURCES:
+  ICD10Kit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ICD10Kit: cff58a57be6e7f952e8f3a8b13c66467446ab3a6
+  Realm: 39ff23f0f709cd4ed93eb47ee6593c2158945b38
+  RealmSwift: 42713e09a8631070d6c12c3c5fb22b8edc1daa41
+
+PODFILE CHECKSUM: f30ade0ff5a2465888fb65fc16d660d1f3be9c0a
+
+COCOAPODS: 1.11.2
