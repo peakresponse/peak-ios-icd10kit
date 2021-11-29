@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'ICD10Kit_Example' do
+  pod 'ICD10Kit', :path => '../'
+
+  target 'ICD10Kit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
