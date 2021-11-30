@@ -8,12 +8,13 @@
 import Foundation
 import RealmSwift
 
-class CMCode: Object {
-    @Persisted(primaryKey: true) var name: String?
-    @Persisted var desc: String?
-    @Persisted var parent: CMCode?
-    @Persisted(originProperty: "parent") var children: LinkingObjects<CMCode>
-    @Persisted var depth: Int?
-    @Persisted var lft: Int?
-    @Persisted var rgt: Int?
+open class CMCode: Object {
+    @Persisted(primaryKey: true) open var name: String?
+    @Persisted open var desc: String?
+    @Persisted open var section: CMSection?
+    @Persisted open var parent: CMCode?
+    @Persisted(originProperty: "parent") open var children: LinkingObjects<CMCode>
+    @Persisted open var depth: Int?
+    @Persisted open var lft: Int?
+    @Persisted open var rgt: Int?
 }

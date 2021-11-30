@@ -8,10 +8,11 @@
 import Foundation
 import RealmSwift
 
-class CMSection: Object {
-    @Persisted(primaryKey: true) var id: String?
-    @Persisted var desc: String?
-    @Persisted var first: String?
-    @Persisted var last: String?
-    @Persisted var chapter: CMChapter?
+open class CMSection: Object {
+    @Persisted(primaryKey: true) open var id: String?
+    @Persisted open var desc: String?
+    @Persisted open var first: String?
+    @Persisted open var last: String?
+    @Persisted open var chapter: CMChapter?
+    @Persisted(originProperty: "section") open var codes: LinkingObjects<CMCode>
 }
