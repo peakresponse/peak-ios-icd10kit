@@ -19,7 +19,7 @@ class ChaptersViewController: UITableViewController, UIDocumentPickerDelegate, I
     deinit {
         notificationToken?.invalidate()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         performQuery()
@@ -54,19 +54,19 @@ class ChaptersViewController: UITableViewController, UIDocumentPickerDelegate, I
         }
     }
 
-    @IBAction @objc func importPressed() {
+    @IBAction func importPressed() {
         let picker = UIDocumentPickerViewController(documentTypes: [String(kUTTypeXML)], in: .open)
         picker.delegate = self
         present(picker, animated: true)
     }
 
-    @IBAction @objc func openPressed() {
+    @IBAction func openPressed() {
         let picker = UIDocumentPickerViewController(documentTypes: [String(kUTTypeItem)], in: .open)
         picker.delegate = self
         present(picker, animated: true)
     }
 
-    @IBAction @objc func exportPressed() {
+    @IBAction func exportPressed() {
         showSpinner()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             let realm = CMRealm.open()
@@ -114,7 +114,7 @@ class ChaptersViewController: UITableViewController, UIDocumentPickerDelegate, I
             item.isEnabled = true
         }
     }
-    
+
     func importCodes(from url: URL) {
         showSpinner()
         parser = ICD10CMParser(url: url)
@@ -136,15 +136,15 @@ class ChaptersViewController: UITableViewController, UIDocumentPickerDelegate, I
             vc.chapter = chapter
         }
     }
-    
+
     // MARK: - ICD10CMParserDelegate
-    
+
     func icd10CMParserDidFinish(_ parser: ICD10CMParser) {
         hideSpinner()
     }
-    
+
     // MARK: - UIDocumentPickerDelegate
-    
+
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         let url = urls[0]
         if url.pathExtension == "xml" {
@@ -155,11 +155,11 @@ class ChaptersViewController: UITableViewController, UIDocumentPickerDelegate, I
     }
 
     // MARK: - UITableViewDataSource
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return results?.count ?? 0
     }

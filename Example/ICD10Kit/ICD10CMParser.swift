@@ -16,7 +16,7 @@ protocol ICD10CMParserDelegate: NSObject {
 
 class ICD10CMParser: NSObject, XMLParserDelegate {
     weak var delegate: ICD10CMParserDelegate?
-    
+
     var parser: XMLParser?
     var realm: Realm?
 
@@ -25,7 +25,7 @@ class ICD10CMParser: NSObject, XMLParserDelegate {
     var codes: [CMCode] = []
     var text: String = ""
     var index: Int = 1
-    
+
     init(url: URL) {
         super.init()
         let parser = XMLParser(contentsOf: url)
@@ -40,13 +40,13 @@ class ICD10CMParser: NSObject, XMLParserDelegate {
     }
 
     // MARK: - XMLParserDelegate
-    
+
     func parserDidStartDocument(_ parser: XMLParser) {
         realm = CMRealm.open()
     }
-    
+
     func parser(_ parser: XMLParser, didStartElement elementName: String,
-                namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
+                namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String: String] = [:]) {
         switch elementName {
         case "chapter":
             chapter = CMChapter()
@@ -70,7 +70,7 @@ class ICD10CMParser: NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         text = "\(text)\(string)"
     }
-    
+
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         switch elementName {
         case "chapter":
