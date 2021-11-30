@@ -52,6 +52,7 @@ class ICD10CMParser: NSObject, XMLParserDelegate {
         case "section":
             section = CMSection()
             section?.id = attributeDict["id"]
+            section?.chapter = chapter
         case "diag":
             let code = CMCode()
             code.section = section
@@ -70,28 +71,12 @@ class ICD10CMParser: NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         switch elementName {
         case "chapter":
-            if let chapter = chapter {
-                try! realm?.write {
-                    realm?.add(chapter, update: .modified)
-                }
-            }
             chapter = nil
         case "section":
-            if let section = section {
-                try! realm?.write {
-                    if let chapter = chapter, chapter.realm == nil {
-                        realm?.add(chapter, update: .modified)
-                    }
-                    realm?.add(section, update: .modified)
-                }
-            }
             section = nil
         case "diag":
             if let code = codes.popLast() {
                 try! realm?.write {
-                    if let section = section, section.realm == nil {
-                        realm?.add(section, update: .modified)
-                    }
                     realm?.add(code, update: .modified)
                 }
             }

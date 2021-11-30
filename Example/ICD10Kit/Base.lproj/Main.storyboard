@@ -33,6 +33,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="1P3-vh-AoS" kind="show" id="uvU-ni-hPY"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -56,6 +59,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KSd-rO-nGl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="85" y="786"/>
+        </scene>
+        <!--Codes-->
+        <scene sceneID="pIQ-dL-4SA">
+            <objects>
+                <tableViewController id="1P3-vh-AoS" customClass="CodesViewController" customModule="ICD10Kit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="GCb-4C-fLG">
+                        <rect key="frame" x="0.0" y="0.0" width="1133" height="744"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Code" textLabel="wfF-eq-w5e" style="IBUITableViewCellStyleDefault" id="N3p-Dg-d1c">
+                                <rect key="frame" x="0.0" y="44.5" width="1133" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N3p-Dg-d1c" id="rjo-yo-brR">
+                                    <rect key="frame" x="0.0" y="0.0" width="1133" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wfF-eq-w5e">
+                                            <rect key="frame" x="20" y="0.0" width="1093" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1P3-vh-AoS" id="EtX-GC-swB"/>
+                            <outlet property="delegate" destination="1P3-vh-AoS" id="H5u-hX-ZWD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Codes" id="4Bu-37-OtQ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aDx-k6-OtR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="769" y="785"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3H5-cI-BIO">

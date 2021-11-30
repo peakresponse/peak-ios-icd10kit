@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		458CA09A2755A23C0065F324 /* ICD10CMParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458CA0992755A23C0065F324 /* ICD10CMParser.swift */; };
+		458CA09C2755B2240065F324 /* CodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458CA09B2755B2240065F324 /* CodesViewController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ChaptersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ChaptersViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		423E903D321B5ED3E752F3CB /* Pods_ICD10Kit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICD10Kit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		458CA092275560990065F324 /* ICD10Kit_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ICD10Kit_Example.entitlements; sourceTree = "<group>"; };
 		458CA0992755A23C0065F324 /* ICD10CMParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICD10CMParser.swift; sourceTree = "<group>"; };
+		458CA09B2755B2240065F324 /* CodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodesViewController.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* ICD10Kit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICD10Kit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ChaptersViewController.swift */,
+				458CA09B2755B2240065F324 /* CodesViewController.swift */,
 				458CA0992755A23C0065F324 /* ICD10CMParser.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
@@ -343,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				458CA09A2755A23C0065F324 /* ICD10CMParser.swift in Sources */,
+				458CA09C2755B2240065F324 /* CodesViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ChaptersViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);

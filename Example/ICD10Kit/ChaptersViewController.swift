@@ -9,6 +9,7 @@
 import ICD10Kit
 import RealmSwift
 import UIKit
+import Foundation
 
 class ChaptersViewController: UITableViewController, UIDocumentPickerDelegate, ICD10CMParserDelegate {
     var parser: ICD10CMParser?
@@ -85,6 +86,14 @@ class ChaptersViewController: UITableViewController, UIDocumentPickerDelegate, I
         parser?.start()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = tableView.indexPathForSelectedRow,
+           let chapter = results?[indexPath.row],
+           let vc = segue.destination as? CodesViewController {
+            vc.chapter = chapter
+        }
+    }
+    
     // MARK: - ICD10CMParserDelegate
     
     func icd10CMParserDidFinish(_ parser: ICD10CMParser) {
