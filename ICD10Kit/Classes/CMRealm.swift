@@ -21,7 +21,8 @@ open class CMRealm {
         }
         let config = Realm.Configuration(fileURL: mainURL,
                                          inMemoryIdentifier: CMRealm.mainMemoryIdentifier,
-                                         readOnly: CMRealm.isMainReadOnly)
+                                         readOnly: CMRealm.isMainReadOnly,
+                                         objectTypes: [CMChapter.self, CMSection.self, CMCode.self])
         let realm = try! Realm(configuration: config)
         if Thread.current.isMainThread {
             CMRealm.main = realm

@@ -24,6 +24,7 @@ class ICD10CMParser: NSObject, XMLParserDelegate {
     var section: CMSection?
     var codes: [CMCode] = []
     var text: String = ""
+    var index: Int = 1
     
     init(url: URL) {
         super.init()
@@ -58,6 +59,8 @@ class ICD10CMParser: NSObject, XMLParserDelegate {
             code.section = section
             code.parent = codes.last
             code.depth = codes.count
+            code.lft = index
+            index += 1
             codes.append(code)
         default:
             text = ""
@@ -77,6 +80,8 @@ class ICD10CMParser: NSObject, XMLParserDelegate {
         case "diag":
             if let code = codes.popLast() {
                 try! realm?.write {
+                    code.rgt = index
+                    index += 1
                     realm?.add(code, update: .modified)
                 }
             }

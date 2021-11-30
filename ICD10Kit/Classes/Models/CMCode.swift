@@ -17,4 +17,10 @@ open class CMCode: Object {
     @Persisted open var depth: Int?
     @Persisted open var lft: Int?
     @Persisted open var rgt: Int?
+    open var isLeaf: Bool {
+        if let lft = lft, let rgt = rgt {
+            return rgt - lft == 1
+        }
+        return false
+    }
 }

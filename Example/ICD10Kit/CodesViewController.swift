@@ -63,8 +63,9 @@ class CodesViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Code", for: indexPath)
         if let code = results?[indexPath.row] {
-            cell.textLabel?.text = "\(code.name ?? ""): \(code.desc ?? "")"
+            cell.textLabel?.text = "(\(code.lft ?? 0)|\(code.rgt ?? 0)) \(code.name ?? ""): \(code.desc ?? "")"
             cell.indentationLevel = code.depth ?? 0
+            cell.accessoryType = code.isLeaf ? .checkmark : .none
         }
         return cell
     }
