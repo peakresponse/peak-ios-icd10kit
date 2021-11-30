@@ -22,17 +22,20 @@ class ChaptersViewController: UITableViewController, UIDocumentPickerDelegate, I
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-
         performQuery()
     }
 
     func performQuery() {
         notificationToken?.invalidate()
+        notificationToken = nil
         let realm = CMRealm.open()
         results = realm.objects(CMChapter.self).sorted(byKeyPath: "position", ascending: true)
-        notificationToken = results?.observe { [weak self] (changes) in
-            self?.didObserveRealmChanges(changes)
+        if realm.configuration.readOnly {
+            tableView.reloadData()
+        } else {
+            notificationToken = results?.observe { [weak self] (changes) in
+                self?.didObserveRealmChanges(changes)
+            }
         }
     }
 
@@ -51,22 +54,44 @@ class ChaptersViewController: UITableViewController, UIDocumentPickerDelegate, I
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction @objc func importPressed() {
+        let picker = UIDocumentPickerViewController(documentTypes: [String(kUTTypeXML)], in: .open)
+        picker.delegate = self
+        present(picker, animated: true)
     }
 
-    @IBAction @objc func importPressed() {
-        let picker = UIDocumentPickerViewController(documentTypes: ["public.xml"], in: .open)
+    @IBAction @objc func openPressed() {
+        let picker = UIDocumentPickerViewController(documentTypes: [String(kUTTypeItem)], in: .open)
         picker.delegate = self
         present(picker, animated: true)
     }
 
     @IBAction @objc func exportPressed() {
-        
+        showSpinner()
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            let realm = CMRealm.open()
+            let documentDirectory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask,
+                                                                 appropriateFor: nil, create: false)
+            let url = documentDirectory?.appendingPathComponent( "icd10cm.realm")
+            if let url = url {
+                do {
+                    try realm.writeCopy(toFile: url, encryptionKey: nil)
+                    DispatchQueue.main.async { [weak self] in
+                        let picker = UIDocumentPickerViewController(url: url, in: .moveToService)
+                        picker.shouldShowFileExtensions = true
+                        self?.present(picker, animated: true)
+                    }
+                } catch {
+                    // noop
+                }
+            }
+            DispatchQueue.main.async { [weak self] in
+                self?.hideSpinner()
+            }
+        }
     }
 
-    func importCodes(from url: URL) {
+    func showSpinner() {
         for item in navigationItem.leftBarButtonItems ?? [] {
             item.isEnabled = false
         }
@@ -81,9 +106,27 @@ class ChaptersViewController: UITableViewController, UIDocumentPickerDelegate, I
         }
         spinner.startAnimating()
         navigationItem.leftBarButtonItems?.append(UIBarButtonItem(customView: spinner))
+    }
+
+    func hideSpinner() {
+        _ = navigationItem.leftBarButtonItems?.popLast()
+        for item in navigationItem.rightBarButtonItems ?? [] {
+            item.isEnabled = true
+        }
+    }
+    
+    func importCodes(from url: URL) {
+        showSpinner()
         parser = ICD10CMParser(url: url)
         parser?.delegate = self
         parser?.start()
+    }
+
+    func openRealm(from url: URL) {
+        showSpinner()
+        CMRealm.configure(url: url, isReadOnly: true)
+        performQuery()
+        hideSpinner()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -97,7 +140,7 @@ class ChaptersViewController: UITableViewController, UIDocumentPickerDelegate, I
     // MARK: - ICD10CMParserDelegate
     
     func icd10CMParserDidFinish(_ parser: ICD10CMParser) {
-        _ = navigationItem.leftBarButtonItems?.popLast()
+        hideSpinner()
     }
     
     // MARK: - UIDocumentPickerDelegate
@@ -106,6 +149,8 @@ class ChaptersViewController: UITableViewController, UIDocumentPickerDelegate, I
         let url = urls[0]
         if url.pathExtension == "xml" {
             importCodes(from: url)
+        } else if url.pathExtension == "realm" {
+            openRealm(from: url)
         }
     }
 

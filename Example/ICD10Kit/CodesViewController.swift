@@ -26,12 +26,18 @@ class CodesViewController: UITableViewController {
 
     func performQuery() {
         notificationToken?.invalidate()
+        notificationToken = nil
         let realm = CMRealm.open()
         results = realm.objects(CMCode.self)
             .filter("section.chapter=%@", chapter as Any)
             .sorted(byKeyPath: "name", ascending: true)
-        notificationToken = results?.observe { [weak self] (changes) in
-            self?.didObserveRealmChanges(changes)
+
+        if realm.configuration.readOnly {
+            tableView.reloadData()
+        } else {
+            notificationToken = results?.observe { [weak self] (changes) in
+                self?.didObserveRealmChanges(changes)
+            }
         }
     }
 

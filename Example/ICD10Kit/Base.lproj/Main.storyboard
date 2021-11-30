@@ -44,12 +44,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Chapters" id="qb6-tG-GQ2">
-                        <barButtonItem key="leftBarButtonItem" title="Import" id="yrg-mo-z4n">
-                            <connections>
-                                <action selector="importPressed" destination="34Y-tE-Qwa" id="IXK-AE-ur6"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Export" id="vdg-Sd-jDN">
+                        <leftBarButtonItems>
+                            <barButtonItem title="Import" id="yrg-mo-z4n">
+                                <connections>
+                                    <action selector="importPressed" destination="34Y-tE-Qwa" id="IXK-AE-ur6"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Open" id="2GF-nN-r9P">
+                                <connections>
+                                    <action selector="openPressed" destination="34Y-tE-Qwa" id="AN3-Zp-PG3"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Export" id="vdg-Sd-jDN">
                             <connections>
                                 <action selector="exportPressed" destination="34Y-tE-Qwa" id="XzD-1i-QV0"/>
                             </connections>
