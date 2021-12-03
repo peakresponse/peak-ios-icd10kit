@@ -14,11 +14,11 @@ open class CMRealm {
     public static var mainMemoryIdentifier: String? = "main.realm"
     public static var isMainReadOnly = false
     
-    public static func configure(url: URL, isReadOnly: Bool) {
+    public static func configure(url: URL?, isReadOnly: Bool) {
         CMRealm.main = nil
         CMRealm.mainURL = url
         CMRealm.isMainReadOnly = isReadOnly
-        CMRealm.mainMemoryIdentifier = nil
+        CMRealm.mainMemoryIdentifier = url != nil ? nil : "main.realm"
     }
 
     public static func open() -> Realm {
