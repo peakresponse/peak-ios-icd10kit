@@ -25,7 +25,7 @@ option is enabled in the toolbar.
 
 ## Installation
 
-1. Include ICD10Kit in your iOS app project using CocoaPods [CocoaPods](https://cocoapods.org). To install it, simply add the following line to your Podfile:
+1. Include ICD10Kit in your iOS app project using [CocoaPods](https://cocoapods.org). To install it, simply add the following line to your Podfile:
 
   ```ruby
   pod 'ICD10Kit'
@@ -48,7 +48,7 @@ option is enabled in the toolbar.
   }
   ```
 
-4. Use as with any Realm database model. For example, in a table view controller:
+4. Use as with any Realm database model. For example, in a table view controller (see https://docs.mongodb.com/realm/sdk/swift/examples/react-to-changes/#register-a-collection-change-listener):
 
   ```
   class CodesViewController: UITableViewController {    
@@ -61,8 +61,6 @@ option is enabled in the toolbar.
       ...      
   }
   ```
-
-  https://docs.mongodb.com/realm/sdk/swift/examples/react-to-changes/#register-a-collection-change-listener
 
 ## Author
 
