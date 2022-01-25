@@ -9,9 +9,9 @@
 Pod::Spec.new do |s|
   s.name             = 'ICD10Kit'
   s.version          = '0.1.0'
-  s.summary          = 'ICD10Kit is a library for embedding a subset of ICD-10-CM codes as a Realm database.'
+  s.summary          = 'ICD10Kit is a library for embedding ICD-10-CM codes as a Realm database.'
   s.description      = <<-DESC
-ICD10Kit is a library for embedding a subset of ICD-10-CM codes as a Realm database. The example
+ICD10Kit is a library for embedding ICD-10-CM codes as a Realm database. The example
 application included with the library can be run on a Mac OS desktop to read ICD-10-CM
 code files and generate a compacted Realm database that can be bundled into an iOS app.
                        DESC
