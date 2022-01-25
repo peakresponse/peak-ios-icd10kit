@@ -68,7 +68,7 @@ Francis Li, francis@peakresponse.net
 
 ## License
 
-ICD10Kit
+ICD10Kit  
 Copyright (C) 2022 Peak Response Inc.
 
 This library is free software; you can redistribute it and/or
