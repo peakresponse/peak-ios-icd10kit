@@ -22,6 +22,7 @@ code files and generate a compacted Realm database that can be bundled into an i
   s.source           = { :git => 'https://github.com/peakresponse/peak-ios-icd10kit.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '12.4'
+  s.swift_versions = ['4.0', '4.2', '5.0']
 
   s.source_files = 'ICD10Kit/Classes/**/*'
   s.dependency 'RealmSwift', '>=10.11.0'
