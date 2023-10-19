@@ -32,7 +32,6 @@
 /* Begin PBXFileReference section */
 		13142CC572E321368C614538 /* Pods-ICD10Kit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICD10Kit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-ICD10Kit_Tests/Pods-ICD10Kit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3566AC2D631302326C4761DA /* Pods-ICD10Kit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICD10Kit_Example.debug.xcconfig"; path = "Target Support Files/Pods-ICD10Kit_Example/Pods-ICD10Kit_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		39C9336FABA93F6AB0F4AC2A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		423E903D321B5ED3E752F3CB /* Pods_ICD10Kit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICD10Kit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		458CA092275560990065F324 /* ICD10Kit_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ICD10Kit_Example.entitlements; sourceTree = "<group>"; };
 		458CA0992755A23C0065F324 /* ICD10CMParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICD10CMParser.swift; sourceTree = "<group>"; };
@@ -162,7 +161,6 @@
 			children = (
 				8A3ABE3B4E97CE144210834E /* ICD10Kit.podspec */,
 				8CB11041F7FDCE19F03FC414 /* README.md */,
-				39C9336FABA93F6AB0F4AC2A /* LICENSE */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
@@ -222,12 +220,12 @@
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = 4575KXUFK2;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = "";
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = 4575KXUFK2;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = "";
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
