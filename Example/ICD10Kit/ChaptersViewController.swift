@@ -10,6 +10,7 @@ import ICD10Kit
 import RealmSwift
 import UIKit
 import Foundation
+import MobileCoreServices
 
 class ChaptersViewController: UITableViewController, UIDocumentPickerDelegate, ICD10CMParserDelegate {
     var parser: ICD10CMParser?
@@ -55,13 +56,23 @@ class ChaptersViewController: UITableViewController, UIDocumentPickerDelegate, I
     }
 
     @IBAction func importPressed() {
-        let picker = UIDocumentPickerViewController(documentTypes: [String(kUTTypeXML)], in: .open)
+        var picker: UIDocumentPickerViewController!
+        if #available(iOS 14, *) {
+            picker = UIDocumentPickerViewController(forOpeningContentTypes: [.xml])
+        } else {
+            picker = UIDocumentPickerViewController(documentTypes: [kUTTypeXML as String], in: .open)
+        }
         picker.delegate = self
         present(picker, animated: true)
     }
 
     @IBAction func openPressed() {
-        let picker = UIDocumentPickerViewController(documentTypes: [String(kUTTypeItem)], in: .open)
+        var picker: UIDocumentPickerViewController!
+        if #available(iOS 14, *) {
+            picker = UIDocumentPickerViewController(forOpeningContentTypes: [.item])
+        } else {
+            picker = UIDocumentPickerViewController(documentTypes: [kUTTypeItem as String], in: .open)
+        }
         picker.delegate = self
         present(picker, animated: true)
     }
