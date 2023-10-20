@@ -58,7 +58,7 @@
                         </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Export" id="vdg-Sd-jDN">
                             <connections>
-                                <action selector="exportPressed" destination="34Y-tE-Qwa" id="XzD-1i-QV0"/>
+                                <action selector="exportPressed" destination="34Y-tE-Qwa" id="s6e-mD-ADi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

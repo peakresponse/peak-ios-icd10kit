@@ -81,10 +81,13 @@ class ChaptersViewController: UITableViewController, UIDocumentPickerDelegate, I
         showSpinner()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             let realm = CMRealm.open()
-            let documentDirectory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask,
-                                                                 appropriateFor: nil, create: false)
-            let url = documentDirectory?.appendingPathComponent( "icd10cm.realm")
+            let fileManager = FileManager.default
+            let documentDirectory = try? fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let url = documentDirectory?.appendingPathComponent("ICD10CM.realm")
             if let url = url {
+                if fileManager.fileExists(atPath: url.path) {
+                    try? fileManager.removeItem(at: url)
+                }
                 do {
                     try realm.writeCopy(toFile: url, encryptionKey: nil)
                     DispatchQueue.main.async { [weak self] in
@@ -93,7 +96,7 @@ class ChaptersViewController: UITableViewController, UIDocumentPickerDelegate, I
                         self?.present(picker, animated: true)
                     }
                 } catch {
-                    // noop
+                    print(error)
                 }
             }
             DispatchQueue.main.async { [weak self] in

@@ -9,34 +9,21 @@
 Pod::Spec.new do |s|
   s.name             = 'ICD10Kit'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of ICD10Kit.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
+  s.summary          = 'ICD10Kit is a library for embedding ICD-10-CM codes as a Realm database.'
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+ICD10Kit is a library for embedding ICD-10-CM codes as a Realm database. The example
+application included with the library can be run on a Mac OS desktop to read ICD-10-CM
+code files and generate a compacted Realm database that can be bundled into an iOS app.
                        DESC
 
-  s.homepage         = 'https://github.com/Francis Li/ICD10Kit'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/peakresponse/peak-ios-icd10kit'
   s.license          = { :type => 'LGPL', :file => 'LICENSE.md' }
-  s.author           = { 'Francis Li' => 'mail@francisli.com' }
-  s.source           = { :git => 'https://github.com/Francis Li/ICD10Kit.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'Francis Li' => 'francis@peakresponse.net' }
+  s.source           = { :git => 'https://github.com/peakresponse/peak-ios-icd10kit.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '12.4'
+  s.swift_versions = ['4.0', '4.2', '5.0']
 
   s.source_files = 'ICD10Kit/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'ICD10Kit' => ['ICD10Kit/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'RealmSwift', '>=10.11.0'
 end
