@@ -6,17 +6,18 @@ code files and generate a compacted Realm database that can be bundled into an i
 
 ## Generate a database file
 
-1. Download ICD-10-CM source files from CMS (latest 2022 edition as of time of writing):
+1. Download ICD-10-CM source files from CMS (latest 2024 edition as of time of writing):
 
-  https://www.cms.gov/files/zip/2022-code-tables-tabular-and-index.zip
+  https://www.cms.gov/files/zip/2024-code-tables-tabular-and-index-updated-06/29/2023.zip
 
-  https://www.cms.gov/medicare/icd-10/2022-icd-10-cm
+  https://www.cms.gov/medicare/coding-billing/icd-10-codes
+
 
 2. To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 3. Then, open the `Example/ICD10Kit.xcworkspace` in Xcode. Change the build target to `My Mac` and run.
 
-4. Click on `Import` in the toolbar. Find the `icd10cm-tabular-2022.xml` in the file browser and click on Open.
+4. Click on `Import` in the toolbar. Find the `icd10cm_tabular_2024.xml` in the file browser and click on Open.
 
 5. Wait as the file is parsed and imported into a Realm database, until the spinner disappears and the Export
 option is enabled in the toolbar.
@@ -69,7 +70,7 @@ Francis Li, francis@peakresponse.net
 ## License
 
 ICD10Kit  
-Copyright (C) 2022 Peak Response Inc.
+Copyright (C) 2023 Peak Response Inc.
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public

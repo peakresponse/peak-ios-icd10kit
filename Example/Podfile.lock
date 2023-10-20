@@ -1,16 +1,16 @@
 PODS:
   - ICD10Kit (0.1.0):
     - RealmSwift (>= 10.11.0)
-  - Realm (10.11.0):
-    - Realm/Headers (= 10.11.0)
-  - Realm/Headers (10.11.0)
-  - RealmSwift (10.11.0):
-    - Realm (= 10.11.0)
-  - SwiftLint (0.45.0)
+  - Realm (10.43.1):
+    - Realm/Headers (= 10.43.1)
+  - Realm/Headers (10.43.1)
+  - RealmSwift (10.43.1):
+    - Realm (= 10.43.1)
+  - SwiftLint (0.53.0)
 
 DEPENDENCIES:
   - ICD10Kit (from `../`)
-  - RealmSwift (= 10.11.0)
+  - RealmSwift (~> 10.43)
   - SwiftLint
 
 SPEC REPOS:
@@ -24,11 +24,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ICD10Kit: cff58a57be6e7f952e8f3a8b13c66467446ab3a6
-  Realm: 39ff23f0f709cd4ed93eb47ee6593c2158945b38
-  RealmSwift: 42713e09a8631070d6c12c3c5fb22b8edc1daa41
-  SwiftLint: e5c7f1fba68eccfc51509d5b2ce1699f5502e0c7
+  ICD10Kit: d627ff3bfba6604b86fe637547bdcf4bfe47720d
+  Realm: d97b438de77459e443bd2c8ad5ca0f95107aee4b
+  RealmSwift: 6be3f27a7fd3f5cc8f99f4b187cc4e7150299e32
+  SwiftLint: 5ce4d6a8ff83f1b5fd5ad5dbf30965d35af65e44
 
-PODFILE CHECKSUM: 2bea02eb15b9e0f569bd982f1ea71c81a4a01596
+PODFILE CHECKSUM: 0b9ac7ed26115857160d8a789303b46d591adda9
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.13.0

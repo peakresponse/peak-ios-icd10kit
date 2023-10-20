@@ -4,7 +4,7 @@ platform :ios, '12.4'
 
 target 'ICD10Kit_Example' do
   pod 'ICD10Kit', :path => '../'
-  pod 'RealmSwift', '10.11.0'
+  pod 'RealmSwift', '~> 10.43'
   pod 'SwiftLint'
 
   target 'ICD10Kit_Tests' do
