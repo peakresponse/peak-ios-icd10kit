@@ -6,17 +6,17 @@ code files and generate a compacted Realm database that can be bundled into an i
 
 ## Generate a database file
 
-1. Download ICD-10-CM source files from CMS (latest 2022 edition as of time of writing):
+1. Download ICD-10-CM source files ("Code Tables, Tabular, and Index") from CMS:
 
-  https://www.cms.gov/files/zip/2022-code-tables-tabular-and-index.zip
+  https://www.cms.gov/medicare/coding-billing/icd-10-codes
 
-  https://www.cms.gov/medicare/icd-10/2022-icd-10-cm
+  https://www.cms.gov/files/zip/2025-code-tables-tabular-and-index-april.zip
 
 2. To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 3. Then, open the `Example/ICD10Kit.xcworkspace` in Xcode. Change the build target to `My Mac` and run.
 
-4. Click on `Import` in the toolbar. Find the `icd10cm-tabular-2022.xml` in the file browser and click on Open.
+4. Click on `Import` in the toolbar. Find the `icd10cm-tabular-2024.xml` in the file browser and click on Open.
 
 5. Wait as the file is parsed and imported into a Realm database, until the spinner disappears and the Export
 option is enabled in the toolbar.
@@ -25,11 +25,10 @@ option is enabled in the toolbar.
 
 ## Installation
 
-1. Include ICD10Kit in your iOS app project using [CocoaPods](https://cocoapods.org). To install it, simply add the following line to your Podfile:
+1. Include ICD10Kit in your iOS app project using Swift Package Manger, referencing this repository:
 
-  ```ruby
-  pod 'ICD10Kit'
-  ```
+    https://github.com/peakresponse/peak-ios-icd10kit
+
 2. Add the exported Realm database file generated previously to your iOS app project.
 
 3. Initialize the library with the Realm file, for example in your AppDelegate didFinishLaunchingWithOptions function.
@@ -69,7 +68,7 @@ Francis Li, francis@peakresponse.net
 ## License
 
 ICD10Kit  
-Copyright (C) 2022 Peak Response Inc.
+Copyright &copy; 2025 Peak Response Inc.
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
