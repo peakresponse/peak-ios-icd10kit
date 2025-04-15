@@ -14,7 +14,7 @@ protocol ICD10CMParserDelegate: NSObject {
     func icd10CMParserDidFinish(_ parser: ICD10CMParser)
 }
 
-class ICD10CMParser: NSObject, XMLParserDelegate {
+class ICD10CMParser: NSObject, @preconcurrency XMLParserDelegate {
     weak var delegate: ICD10CMParserDelegate?
 
     var parser: XMLParser?
@@ -41,7 +41,7 @@ class ICD10CMParser: NSObject, XMLParserDelegate {
 
     // MARK: - XMLParserDelegate
 
-    func parserDidStartDocument(_ parser: XMLParser) {
+    @MainActor func parserDidStartDocument(_ parser: XMLParser) {
         realm = CMRealm.open()
     }
 

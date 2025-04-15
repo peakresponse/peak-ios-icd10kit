@@ -9,19 +9,19 @@ import Foundation
 import RealmSwift
 
 open class CMRealm {
-    public static var main: Realm!
-    public static var mainURL: URL?
-    public static var mainMemoryIdentifier: String? = "main.realm"
-    public static var isMainReadOnly = false
+    @MainActor public static var main: Realm!
+    @MainActor public static var mainURL: URL?
+    @MainActor public static var mainMemoryIdentifier: String? = "main.realm"
+    @MainActor public static var isMainReadOnly = false
     
-    public static func configure(url: URL?, isReadOnly: Bool) {
+    @MainActor public static func configure(url: URL?, isReadOnly: Bool) {
         CMRealm.main = nil
         CMRealm.mainURL = url
         CMRealm.isMainReadOnly = isReadOnly
         CMRealm.mainMemoryIdentifier = url != nil ? nil : "main.realm"
     }
 
-    public static func open() -> Realm {
+    @MainActor public static func open() -> Realm {
         if Thread.current.isMainThread && CMRealm.main != nil {
             if !CMRealm.main.configuration.readOnly {
                 CMRealm.main.refresh()
